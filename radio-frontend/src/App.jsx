@@ -3,6 +3,7 @@ import './App.css'
 import RadioPlayer from './components/RadioPlayer.jsx';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import StationList from './components/StationList';
 
 const API_URL = 'http://localhost:8080/api/stations';
 
@@ -48,7 +49,9 @@ function App() {
           <button>Añadir Nueva Estación</button>
         </Link>
       </header>
-      <main></main>
+      <main>
+        <StationList stations={stations} onPlay={setCurrentStation} onDelete={handleDelete} />
+      </main>
       <footer>
       <RadioPlayer station={currentStation} />
       </footer>

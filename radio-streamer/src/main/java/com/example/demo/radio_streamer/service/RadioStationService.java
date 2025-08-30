@@ -22,7 +22,7 @@ public class RadioStationService {
 		return stationRepository.findAll();
 	}
 	
-	public RadioStation getStationById(Long id) {
+	public RadioStation getStationById(Integer id) {
 		return stationRepository.findById(id)
 				.orElseThrow(()-> new EntityNotFoundException("Estación no encontrada con id: "+id));
 	}
@@ -31,7 +31,7 @@ public class RadioStationService {
 		return stationRepository.save(station);
 	}
 	
-	public RadioStation updateStation(Long id, RadioStation stationDetails) {
+	public RadioStation updateStation(Integer id, RadioStation stationDetails) {
 		RadioStation station = getStationById(id);
 		station.setName(stationDetails.getName());
 		station.setStreamUrl(stationDetails.getStreamUrl());
@@ -41,7 +41,7 @@ public class RadioStationService {
 		return stationRepository.save(station);
 	}
 	
-	public void deleteStation(Long id) {
+	public void deleteStation(Integer id) {
 		if(!stationRepository.existsById(id)) {
 			throw new EntityNotFoundException("Estación no encontrada con id: "+id);
 		}

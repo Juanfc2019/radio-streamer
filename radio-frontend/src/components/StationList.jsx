@@ -9,6 +9,7 @@ function StationList({ stations, onPlay, onDelete}) {
             <thead>
                 <tr>
                     <th>Nombre</th>
+                    <th>URL</th>
                     <th>Género</th>
                     <th>País</th>
                     <th>Acciones</th>
@@ -18,6 +19,7 @@ function StationList({ stations, onPlay, onDelete}) {
                 {stations.map((station) => (
                     <tr key={station.id}>
                         <td>{station.name}</td>
+                        <td>{station.streamUrl}</td>
                         <td>{station.genre}</td>
                         <td>{station.country}</td>
                         <td>

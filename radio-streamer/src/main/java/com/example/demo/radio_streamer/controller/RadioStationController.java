@@ -36,7 +36,7 @@ public class RadioStationController {
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<RadioStation> getStationById(@PathVariable Long id){
+	public ResponseEntity<RadioStation> getStationById(@PathVariable Integer id){
 		return ResponseEntity.ok(stationService.getStationById(id));
 	}
 	
@@ -47,12 +47,12 @@ public class RadioStationController {
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<RadioStation> updateStation(@PathVariable Long id, @Valid @RequestBody RadioStation stationDetails){
+	public ResponseEntity<RadioStation> updateStation(@PathVariable Integer id, @Valid @RequestBody RadioStation stationDetails){
 		return ResponseEntity.ok(stationService.updateStation(id, stationDetails));
 	}
 	
 	@DeleteMapping("/{id}")
-	public ResponseEntity<Void> deleteStation(@PathVariable Long id){
+	public ResponseEntity<Void> deleteStation(@PathVariable Integer id){
 		stationService.deleteStation(id);
 		return ResponseEntity.noContent().build();
 	}

@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.example.demo.radio_streamer.model.RadioStation;
 
 @Repository
-public interface RadioStationRepository extends JpaRepository<RadioStation, Long>{
+public interface RadioStationRepository extends JpaRepository<RadioStation, Integer>{
 
 }
