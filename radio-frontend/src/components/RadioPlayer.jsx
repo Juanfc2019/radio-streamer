@@ -11,16 +11,18 @@ function RadioPlayer({ station }) {
             <div>
                 <h3>Reproduciendo: {station.name}</h3>
                 <ReactPlayer
-                    url={station.streamUrl}
-                    autoPlay={true}
+                    slot="media"
+                    src={station.streamUrl}
+                    playing={true}
                     controls={true}
                     width="100%"
-                    height="auto" // Adjust height as needed
+                    height="50px"
+                    config={{
+                        file: {
+                            forceAudio: true,
+                        }
+                    }}
                 />
-                {/*                 <audio controls>
-                    <source src={station.streamUrl} type="audio/mpeg" />
-                    Tu navegador no soporta el elemento de audio.
-                </audio> */}
             </div>
         </>
     );
